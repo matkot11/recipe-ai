@@ -143,6 +143,29 @@ Where to look
 - Server routes: `server/api/`.
 - Pages and components: `pages/`, `components/`, `composables/`.
 
+- Design / external asset integrations (Figma MCP)
+
+- This repository may rely on a machine-configured MCP (Microservice Control Plane) entry for accessing design assets (Figma). Check for an `mcp.json` configuration in developer tooling or the user's Copilot config (example path used on this machine: `~/.config/github-copilot/intellij/mcp.json`). Example content found in that file:
+
+  ```json
+  {
+    "servers": {
+      "figma": {
+        "type": "http",
+        "url": "https://mcp.figma.com/mcp"
+      }
+    }
+  }
+  ```
+
+- Do NOT commit any credentials or tokens. To verify connectivity locally (replace `$FIGMA_TOKEN` with your token):
+
+  ```bash
+  curl -v -H "Authorization: Bearer $FIGMA_TOKEN" "https://mcp.figma.com/mcp/health"
+  ```
+
+  If you do not have network access from an agent, ask the developer to run the check and share the results.
+
 If You Add Tests
 
 - Add a `test` script to `package.json` and document how to run single tests. Prefer Vitest. Example `package.json` entries:
