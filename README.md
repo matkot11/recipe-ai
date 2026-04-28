@@ -1,0 +1,1 @@
+*** Welcome to RecipeAi app built with FastAPI and Nuxt.
