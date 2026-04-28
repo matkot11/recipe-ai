@@ -1,0 +1,60 @@
+line-length = 100
+indent-width = 4
+target-version = "py311"
+
+[lint]
+# Select all rules from https://docs.astral.sh/ruff/rules/ by default to stay up-to-date.
+select = ["ALL"]
+
+# Ignore rules that are not relevant or too annoying.
+ignore = [
+    "COM812", # missing-trailing-comma
+    "D100", # undocumented-public-module
+    "D101", # undocumented-public-class
+    "D102", # undocumented-public-method
+    "D103", # undocumented-public-function
+    "D104", # undocumented-public-package
+    "D105", # undocumented-magic-method
+    "D107", # undocumented-public-init
+    "D202", # blank-line-after-function
+    "D203", # incorrect-blank-line-before-class
+    "D213", # multi-line-summary-second-line
+    "D413", # missing-blank-line-after-last-section
+    "EM101", # raw-string-in-exception
+    "EM102", # f-string-in-exception
+    "FBT001", # boolean-type-hint-positional-argument
+    "FBT002", # boolean-default-value-positional-argument
+    "PERF401", # manual-list-comprehension
+    "S101", # assert
+    "SIM102", # collapsible-if
+    "TD002", # missing-todo-author
+    "TD003", # missing-todo-link
+    "TRY003", # raise-vanilla-args
+    "PLR0913", # too-many-arguments
+    "D106", # undocumented-public-nested-class
+
+    # Temporary ignores as we want to gradually fix these items
+    "C901", # complex-structure
+    "FIX002", # line-contains-todo
+    "TRY301", # raise-within-try
+    "PLR2004", # magic-value-comparison
+    "PLR0912", # too-many-branches
+]
+
+
+[lint.flake8-bugbear]
+extend-immutable-calls = [
+    "Depends",
+    "fastapi.Depends",
+    "Query",
+    "fastapi.Query",
+    "Path",
+    "fastapi.Path",
+]
+
+[lint.flake8-annotations]
+mypy-init-return = true
+
+[format]
+docstring-code-format = true
+docstring-code-line-length = "dynamic"

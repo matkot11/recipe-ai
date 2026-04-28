@@ -1,0 +1,24 @@
+
+{
+    "folders": [
+      {
+        "name": "⛩️ Root",
+        "path": "."
+      },
+      {
+        "name": "🖥️ Frontend",
+        "path": "./frontend"
+      },
+      {
+        "name": "🏥 Backend",
+        "path": "./backend"
+      }
+    ],
+    "settings": {
+      "taskfileLauncher.taskfileNames": [
+        "taskfile.yaml",
+        "taskfile.dist.yaml"
+      ]
+    }
+  }
+  

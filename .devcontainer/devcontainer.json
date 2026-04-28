@@ -15,6 +15,7 @@
       "version": "latest"
     }
   },
+  "postCreateCommand": "curl -LsSf https://astral.sh/uv/install.sh | sh",
   "customizations": {
     "vscode": {
       "extensions": [
@@ -22,7 +23,8 @@
         "vue.volar",
         "nuxtr.nuxtr-vscode",
         "davidanson.vscode-markdownlint",
-        "bradlc.vscode-tailwindcss"
+        "bradlc.vscode-tailwindcss",
+        "joshx.workspace-terminals"
       ]
     }
   }
