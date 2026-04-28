@@ -1,0 +1,33 @@
+services:
+  devcontainer:
+    image: mcr.microsoft.com/devcontainers/base:ubuntu
+
+    # Override default command to prevent the container from shutting down
+    command: sleep infinity
+
+    # Load variables from root-level .env file
+    # These are local environment variables, backend and frontend use their own .env files
+    env_file:
+      - ../.env
+
+    volumes:
+      - ..:/workspaces/recipe-ai
+
+  db:
+    image: postgres:14-alpine
+
+    environment:
+      POSTGRES_USER: llm-evaluation
+      POSTGRES_PASSWORD: llm-evaluation
+      POSTGRES_DB: llm-evaluation
+
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+    network_mode: service:devcontainer
+
+    restart: unless-stopped
+
+volumes:
+  postgres-data:
+

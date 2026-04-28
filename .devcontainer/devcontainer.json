@@ -1,0 +1,30 @@
+{
+    "name": "recipe-ai",
+    "dockerComposeFile": "./compose.yml",
+    "service": "devcontainer",
+    "workspaceFolder": "/workspaces/recipe-ai",
+    "shutdownAction": "none",
+    "features": {
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "3.11"
+    },
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "22"
+    },
+    "ghcr.io/devcontainers/features/git:1": {
+      "version": "latest"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "charliermarsh.ruff",
+        "vue.volar",
+        "nuxtr.nuxtr-vscode",
+        "davidanson.vscode-markdownlint",
+        "bradlc.vscode-tailwindcss"
+      ]
+    }
+  }
+
+}
