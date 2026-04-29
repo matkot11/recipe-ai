@@ -1,5 +1,7 @@
 .env
+/frontend/.env
 __pycache__/
 *.py[cod]
 *.pyo
 .venv/
+.pnpm-store/
